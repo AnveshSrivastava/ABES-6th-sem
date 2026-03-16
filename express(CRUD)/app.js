@@ -1,3 +1,4 @@
+const express = require("express");
 const app = express();
 const port = 3000;
 
@@ -7,14 +8,14 @@ let users = [];
 
 // Create a new user
 app.post('/users', (req, res) => {
-    const { name, class: userClass } = req.body;
+    const { name, email } = req.body;
     const id = users.length + 1;
-    const newUser = { id, name, class: userClass };
+    const newUser = { id, name, email };
     users.push(newUser);
     res.status(201).json(newUser);
 }
 );
-// Get all users
+// Get all users 
 app.get('/users', (req, res) => {
     res.json(users);
 });
@@ -33,9 +34,9 @@ app.get('/users/:id', (req, res) => {
 app.put('/users/:id', (req, res) => {
     const user = users.find(u => u.id === parseInt(req.params.id));
     if (user) {
-        const { name, class: userClass } = req.body;
+        const { name, email } = req.body;
         user.name = name || user.name;
-        user.class = userClass || user.class;
+        user.email = email || user.email;
         res.json(user);
     } else {
         res.status(404).json({ message: 'User not found' });
