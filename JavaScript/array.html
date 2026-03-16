@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Cards</title>
+  <style>
+    .card {
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      width: 250px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h2>B.Tech Students</h2>
+      <div id="btech"></div>
+    </div>
+
+    <div class="card">
+      <h2>Other Students</h2>
+      <div id="others"></div>
+    </div>
+  </div>
+<p id="ary"></p>
+  <script>
+    const data = [
+      { name: "aryan", roll_no: 1, class: "btech" },
+      { name: "anvesh", roll_no: 2, class: "btech" },
+      { name: "aryan", roll_no: 3, class: "bcom" },
+      { name: "abhishek", roll_no: 4, class: "bcom" },
+      { name: "anurag", roll_no: 5, class: "btech" }
+    ];
+
+    for (let i = 0; i < data.length; i++) {
+      const student = `${data[i].name} ${data[i].roll_no} ${data[i].class}<br>`;
+      if (data[i].class === "btech") {
+        document.getElementById("btech").innerHTML += student;
+      } else {
+        document.getElementById("others").innerHTML += student;
+      }
+    }
+
+    const toy=new Object({
+      toy1:"car",
+      toy2:"apple",
+      toy3:"elephant",
+    });
+    document.getElementById("ary").innerHTML=toy.toy3;
+
+  class Car{
+    constructor(name,year){
+      this.name=name;
+      this.year=year;
+    }
+  }
+  const myCar1=new Car("ford", 2024);
+  const myCar2=new Car("audi", 2025);
+  document.getElementById("ary").innerHTML=myCar1.name;
+  </script>
+</body>
+</html>

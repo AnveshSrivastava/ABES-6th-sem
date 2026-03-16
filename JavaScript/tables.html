@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div style="float:left; width:50%;">
+    <script>
+      var a1 = 11;
+
+      document.write("Table of " + a1 + "<br>");
+      for (var i = 1; i <= 10; i++) {
+        var result = a1 * i;
+        document.write(a1 + " x " + i + " = " + result + "<br>");
+      }
+    </script>
+  </div>
+
+  <div style="float:right; width:50%; text-align:right;">
+    <script>
+      var a2 = 15;
+
+      document.write("Table of " + a2 + "<br>");
+      for (var i = 1; i <= 10; i++) {
+        var result = a2 * i;
+        document.write(a2 + " x " + i + " = " + result + "<br>");
+      }
+    </script>
+  </div>
+
+  <div style="clear:both; margin-top:30px;">
+    <script>
+      var a1 = 11;
+      var a2 = 15;
+
+      document.write("<br><b>Combined Results</b><br>");
+
+      document.write("Even numbers: ");
+      for (var i = 1; i <= 10; i++) {
+        var r1 = a1 * i;
+        var r2 = a2 * i;
+        if (r1 % 2 == 0) document.write(r1 + " ");
+        if (r2 % 2 == 0) document.write(r2 + " ");
+      }
+
+      document.write("<br>Odd numbers: ");
+      for (var i = 1; i <= 10; i++) {
+        var r1 = a1 * i;
+        var r2 = a2 * i;
+        if (r1 % 2 != 0) document.write(r1 + " ");
+        if (r2 % 2 != 0) document.write(r2 + " ");
+      }
+    </script>
+  </div>
+</body>
+</html>

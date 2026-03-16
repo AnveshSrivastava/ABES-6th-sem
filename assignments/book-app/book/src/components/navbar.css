@@ -1,0 +1,37 @@
+.navbar {
+  background-color: coral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border-bottom: 4px solid #d32f2f;
+}
+
+.nav-btn {
+  text-decoration: none; 
+  color: black;          
+  background-color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 15px;
+  display: inline-block; 
+}
+
+.nav-left .nav-btn:last-child,
+.nav-right .nav-btn:last-child {
+  margin-right: 0;
+}
+
+.nav-btn:hover {
+  background-color: #ff7043;
+  color: white;
+}
+
+.active-link {
+  background-color: #d32f2f;
+  color: white;
+}
