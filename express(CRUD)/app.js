@@ -59,17 +59,17 @@ app.get('/users/:id', (req, res) =>{
         res.status(404).json({ message: 'User not found' });
     }
 })
-// app.put('/users/:id', (req, res) => {
-//     const user = users.find(u => u.id === parseInt(req.params.id));
-//     if (user) {
-//         const { name, email } = req.body;
-//         user.name = name || user.name;
-//         user.email = email || user.email;
-//         res.json(user);
-//     } else {
-//         res.status(404).json({ message: 'User not found' });
-//     }
-// });
+app.put('/update/:id', (req, res) => {
+    const user = users.find(u => u.id === parseInt(req.params.id));
+    if(user) {
+        const {name, email} = req.body;
+        user.name = name ;
+        user.email = email;
+        return res.status(200).json({message:"User updated", user: user});
+    }else{
+        return res.status(404).json({message:"User not found"});
+    }
+});
 
 app.delete('/users/:id', (req, res) => {
     const index = users.findIndex(u => u.id === parseInt(req.params.id));
